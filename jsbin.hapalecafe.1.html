@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/hapalecafe/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body {
+    background-image: url("D:/imq/09pXgsGypas.jpg");
+}
+
+.container {
+    display: flex;
+    margin-top: 80px;
+}
+
+.calc-wrapper {
+    background-color: #f1efef;
+    width: 340px;
+    height: 410px;
+    border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 1px 35px 91px -23px #050505;
+    padding-left: 20px;
+}
+
+#display {
+    background-color: #050505;
+    padding: 0px 10px;
+    width: 300px;
+    font-size: 39px;
+    border-radius: 8px;
+    margin: 38px 0px;
+    color: aliceblue;
+    font-family: 'Press Start 2P', cursive;
+    text-align: right;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(193, 193, 193, 0.29);
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    margin: 80px 100px;
+}
+
+.about {
+    background-color: white;
+    width: 220px;
+    padding: 8px 20px;
+    font-size: 20px;
+    border-radius: 23px;
+    margin-left: 100px;
+    margin-top: -50px;
+}
+
+.btn {
+    width: 68px;
+    height: 42px;
+    background-color: #f4f4f4;
+    border: 2px solid #e3e3e3;
+    border-radius: 6px;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 0px;
+    color: #5b5c5d;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.ravno{
+  height:93px;
+}
+
+.btn:hover {
+    background-color: #b5b5b5;
+}
+
+.btn_hover_red:hover {
+    background-color: rgba(235, 53, 53, 0.92);
+}
+
+.btn_hover_blue:hover {
+    background-color: #2957e0;
+}
+
+#n0 {
+    width: 145px;
+}
+
+#equal {
+    height: 92px;
+}
+
+.result{
+  height: 50px;
+}
+</style>
+</head>
+<body>
+ <div class="wrapper">
+        <div class="maincontent">
+            <div class="container">
+                <main class='page'>
+                    <div class="container">
+                        <div class="page_left">
+                            <div class="calc-wrapper">
+                                <div class="calc">
+                                    <div class="page_display">
+                                        <input disabled type="text" value="0" id="display" class="calc_display-input" placeholder="00000000000000">
+                                    </div>
+                                    <div class="calc_buttons">
+                                        <table class="calc_table">
+                                            <tr class="calc_buttons-row">
+                                                <td>
+                                                    <button type="button" id="ce" class="clear_btn btn btn_default btn_hover_red">ce</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" id="c" class="clear_btn btn btn_default btn_hover_red">c</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" value="Деление" class="operation btn btn_default btn_hover_blue">/</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" value="Умножение" class="operation btn btn_default btn_hover_blue">*</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="calc_buttons-row">
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">7</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">8</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">9</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" value="Вычитание" class="operation btn btn_default btn_hover_blue">-</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="calc_buttons-row">
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">4</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button"class="number btn btn_default ">5</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">6</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" value="Сложение" class="operation btn btn_default btn_hover_blue">+</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="calc_buttons-row">
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">1</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">2</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="number btn btn_default ">3</button>
+                                                </td>
+                                                <td rowspan="2">
+                                                    <button type="button" value="Результат" id="result" class="ravno operation btn btn_default btn_hover_blue">=</button>
+                                                </td>
+                                            </tr>
+                                            <tr class="calc_buttons-row">
+                                                <td colspan="2">
+                                                    <button type="button" id="n0" class="number btn btn_default btn_long">0</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn_default " id="decimal">.</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+<script id="jsbin-javascript">
+var Numbers = document.querySelectorAll('.number'),
+    Operations = document.querySelectorAll('.operation'),
+    DecimalBtn = document.getElementById('decimal'),
+    ClearBtns = document.querySelectorAll('.clear_btn'),
+    Display = document.getElementById('display'),
+    MemoryCurrentNumber = 0,
+    MemoryNewNumber = false,
+    MemoryPendingOperation = '';
+
+
+
+for (var i = 0; i < Numbers.length; i++) {
+    var number = Numbers[i];
+    number.addEventListener('click', function(e) {
+        numberPress(e.target.textContent);
+    });
+}
+
+for (var i = 0; i < Operations.length; i++) {
+    var operationBtn = Operations[i];
+    operationBtn.addEventListener('click', function(e) {
+        operation(e.target.textContent);
+    });
+}
+
+for (var i = 0; i < ClearBtns.length; i++) {
+    var clearBtn = ClearBtns[i];
+    clearBtn.addEventListener('click', function(e) {
+        clear(e.srcElement.id);
+    });
+}
+
+DecimalBtn.addEventListener('click', decimal);
+
+
+
+
+
+function numberPress(number) {
+    if (MemoryNewNumber) {
+        display.value = number;
+        MemoryNewNumber = false;
+    } else {
+        if (display.value === '0') {
+            display.value = number;
+        } else {
+            display.value += number;
+        }
+    }
+}
+
+function operation(op) {
+    var localOperationMemory = display.value;
+    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+        display.value = MemoryCurrentNumber;
+    } else {
+        MemoryNewNumber = true;
+        if (MemoryPendingOperation === '+') {
+            MemoryCurrentNumber += parseFloat(localOperationMemory);
+        } else if (MemoryPendingOperation === '-') {
+            MemoryCurrentNumber -= parseFloat(localOperationMemory);
+        } else if (MemoryPendingOperation === '*') {
+            MemoryCurrentNumber *= parseFloat(localOperationMemory);
+        } else if (MemoryPendingOperation === '/') {
+            MemoryCurrentNumber /= parseFloat(localOperationMemory);
+        } else {
+            MemoryCurrentNumber = parseFloat(localOperationMemory);
+        }
+        display.value = MemoryCurrentNumber;
+        MemoryPendingOperation = op;
+    }
+}
+
+
+function clear(id) {
+    if (id == 'ce') {
+        display.value = '0';
+        MemoryNewNumber = true;
+    } else if (id == 'c') {
+        display.value = '0';
+        MemoryNewNumber = true;
+        MemoryCurrentNumber = 0;
+        MemoryPendingOperation = '';
+    }
+}
+
+function decimal() {
+    var localDecimalMemory = display.value;
+
+    if (MemoryNewNumber) {
+        localDecimalMemory = '0.';
+        MemoryNewNumber = false;
+    } else {
+        if (localDecimalMemory.indexOf('.') === -1) {
+            localDecimalMemory += '.';
+        }
+    }
+    display.value = localDecimalMemory;
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

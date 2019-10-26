@@ -1,4 +1,4 @@
-# hello-world
-my first repository
+# JS calulator
+I wrote calculator on JS
 
 

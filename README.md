@@ -1,4 +1,4 @@
 # JS calulator
-I wrote calculator on JS
+I've written calculator on JS
 
 
